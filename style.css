@@ -1,0 +1,24 @@
+@keyframes drift {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    50% {
+        transform: translateX(30px) translateY(20px);  /* Дрейф вправо и вниз */
+    }
+    100% {
+        transform: translateX(-30px) translateY(-20px); /* Дрейф влево и вверх */
+    }
+}
+
+.item {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    transform: translateY(50px);
+    animation: drift 5s ease-in-out infinite; /* Плавный дрейф */
+}
+
+.item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
