@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Ocean Exploration</title> 
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            transition: background-color 1s ease;
+            background-color: #00A3B8;
+        }
+
+        @keyframes drift {
+            0% { transform: translateX(0) translateY(0); }
+            50% { transform: translateX(30px) translateY(20px); }
+            100% { transform: translateX(-30px) translateY(-20px); }
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .item {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            transform: translateY(50px);
+            animation: drift 5s ease-in-out infinite;
+        }
+
+        .item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            font-size: 48px;
+            color: white;
+            margin-top: 20px;
+        }
+
+        img {
+            width: 150px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            margin-top: 10px;
+        }
+
+        .audio-button {
+            padding: 10px 20px;
+            background-color: #004d73;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .audio-button:hover {
+            background-color: #0074a2;
+        }
+    </style>
+</head>
+<body>
+
+    <center><h1>🌊 Deep Ocean Travel 🌊</h1></center>
+
+    <div class="section">
+        <div class="item" style="top: 70%; left: 40%;">
+            🌊 Ocean waves, you are starting to go deep on submarine
+            <br>
+            <img src="https://media1.tenor.com/m/f0PS9RlKsP8AAAAC/yes-oh.gif" alt="Waves">
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="item" style="top: 50%; left: 30%;">😀 You have already descended 1 km with your crew, but you still have 15 km of descent down into an unexplored depression, which is hidden by the government.</div>
+    </div>
+    
+    <div class="section">
+        <div class="item" style="top: 50%; left: 30%;">😐 Already 2 km under water, this submarine was used in the last expedition, but the government refused to tell us about it.</div>
+    </div>
+
+    <div class="section">
+        <div class="item" style="top: 50%; left: 30%;">😐 Already 2.5 km under water. Our entire crew heard a strange knocking on the side of the submarine, perhaps it was some kind of fish that accidentally hit the side.</div>
+    </div>
+
+    <div class="section">
+        <div class="item" style="top: 50%; left: 30%;">
+            😟 Already 3 km under water, we have been hearing hits underwater for 40 minutes.
+            <br><br>
+            <!-- Audio Player (hidden) -->
+            <audio id="deepSeaAudio">
+                <source src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Bloop_real.ogg" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <!-- Button to Play Audio -->
+            <button class="audio-button" onclick="playAudio()">🔊 Play Hits Sound</button>
+        </div>
+    </div>
+
+     <div class="section">
+        <div class="item" style="top: 50%; left: 30%;">😐 We went down 5 km and noticed strange underwater caves, we also started hearing screams from under our submarine, I was able to record them a little, please listen to the audio recording.
+        
+                    <audio id="ScreamAudio">
+                <source src="https://github.com/PurpleGuyCoyote/Sounds/raw/refs/heads/main/gorbatyiy-kit-30560.ogg" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <!-- Button to Play Audio -->
+            <button class="audio-button" onclick="playAudioScream()">🔊 Play Audio</button>
+         </div>
+    </div>
+    
+    <div class="section">
+        <div class="item" style="top: 50%; left: 30%;">😟 We descended 5.5 km and the sounds stopped, perhaps they were from the underwater cave system, scientists are not responding to our messages, perhaps communication problems. </div>
+    </div>
+    
+    <div class="section">
+        <div class="item" style="top: 50%; left: 30%;">😰 One of the crew members decided to go outside to collect some particles for scientists, we stopped at a depth of 6 km and waited for his return, upon his return he handed a small piece of coral to a special compartment outside and after that something pulled him into the water</div>
+ </div>
+    <div class="section">
+        <div class="item" style="top: 70%; left: 40%;">
+            💀 Your crewmate shows this videos to you, he said he found it in the wardrobe after the last expedition
+            <br>
+            <img src="https://media1.tenor.com/m/rwNqZnnh-g4AAAAd/scary-big-fish.gif" alt="Scary Fish">
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="item" style="top: 70%; left: 40%;">
+            💀 Already 8 km. You saw how this creature ate a fish and you took a short video for scientists, maybe it's this fish, that ate your crewmate
+            <br>
+            <img src="https://media1.tenor.com/m/rqm5oGXmBn4AAAAC/shark-eating.gif" alt="Scary Deep Fish">
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="item" style="top: 70%; left: 40%;">
+            💀 This creature has been looking at us for 20 minutes now, what should we do? Its quite huge, but because of the darkness it looks like it's small, like a piranha.
+            <br>
+            <img src="https://media1.tenor.com/m/Shlx-oXIN9IAAAAd/viperfish-scary.gif" alt="Huge Deep Fish">
+        </div>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.item');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const maxScroll = document.body.scrollHeight - window.innerHeight;
+
+            const startColor = [0, 115, 230]; 
+            const endColor = [0, 31, 63];      
+
+            const scrollProgress = scrollY / maxScroll;
+
+            const r = Math.round(startColor[0] + (endColor[0] - startColor[0]) * scrollProgress);
+            const g = Math.round(startColor[1] + (endColor[1] - startColor[1]) * scrollProgress);
+            const b = Math.round(startColor[2] + (endColor[2] - startColor[2]) * scrollProgress);
+
+            document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+            items.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    item.classList.add('visible');
+                } else {
+                   item.classList.remove('visible');
+                }
+            });
+        });
+
+        // Function to Play Audio
+        function playAudio() {
+            const audio = document.getElementById('deepSeaAudio');
+            audio.play();
+        }
+        
+                function playAudioScream() {
+            const audio = document.getElementById('ScreamAudio');
+            audio.play();
+        }
+    </script>
+
+</body>
+  </html>
